@@ -2,7 +2,7 @@ import { ContactItem } from 'components/ContactsItem/ContactsItem';
 import PropTypes from 'prop-types';
 import { List } from 'components/ContactList/ContactList.styled';
 
-let creatContacts = null;
+let createContacts = null;
 let creatContactItem = null;
 
 export const ContactList = ({ contacts, filterState, handleBtnClick }) => {
@@ -16,14 +16,14 @@ export const ContactList = ({ contacts, filterState, handleBtnClick }) => {
   );
 
   if (filterState === '') {
-    creatContacts = contacts.map(creatContactItem);
+    createContacts = contacts.map(creatContactItem);
   } else {
-    creatContacts = contacts
+    createContacts = contacts
       .filter(contact => contact.name.toLowerCase().includes(filterState))
       .map(creatContactItem);
   }
 
-  return <List>{creatContacts}</List>;
+  return <List>{createContacts}</List>;
 };
 
 ContactList.propTypes = {
