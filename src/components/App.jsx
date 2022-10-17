@@ -35,14 +35,12 @@ export function App() {
       Notify.info(`${nameInput.value} is already in contacts`);
       return;
     } else {
-      const newContact = [
-        {
-          name: nameInput.value,
-          number: numberInput.value,
-          id: nanoid(),
-        },
-      ];
-      setContacts([...contacts, ...newContact]);
+      const newContact = {
+        name: nameInput.value,
+        number: numberInput.value,
+        id: nanoid(),
+      };
+      setContacts([...contacts, newContact]);
     }
 
     nameInput.value = '';
