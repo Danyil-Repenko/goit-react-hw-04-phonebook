@@ -49,7 +49,7 @@ export function App() {
 
   const removeContact = e => {
     if (e.target.nodeName === 'BUTTON') {
-      const contactName = e.currentTarget.getAttribute('name');
+      const contactName = e.currentTarget.getAttribute('data-name');
       return setContacts(
         contacts.filter(contact => contact.name !== contactName)
       );
